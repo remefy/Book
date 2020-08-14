@@ -7,12 +7,4 @@ class Book:
         self.genre = genre
 
     def __repr__(self):
-        return f"{self.id}. {self.name} {self.year}"
-
-
-class BooksApp:
-    def __init__(self, adapter):
-        self.
-
-    def start(self):
-        pass
+        return f"{self.id}. {self.name} {self.year} {self.author} {self.genre}"

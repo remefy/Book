@@ -9,6 +9,9 @@ class BooksDBAdapter:
         pass
 
     def get_all_books(self) -> Book or None:
+        return self.books
+
+    def get_book_by_id(self, id):
         for book in self.books:
             if book.id == id:
                 return book
