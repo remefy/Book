@@ -36,7 +36,7 @@ class BooksApp:
                 id = int(input("Введите id книги: "))
                 book = self.adapter.get_book_by_id(id)
                 if book is not None:
-                    self.adapter.delete_book(book)
+                    self.adapter.delete_book(id)
                     print("Книга удалена успешно")
                 else:
                     print("Книга не найдена")

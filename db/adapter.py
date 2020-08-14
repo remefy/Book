@@ -4,14 +4,15 @@ from models import Book
 class BooksDBAdapter:
     def __init__(self):
         self.books = []
+        self.last_id = 1
 
     def prepare(self):
         pass
 
-    def get_all_books(self) -> Book or None:
+    def get_all_books(self):
         return self.books
 
-    def get_book_by_id(self, id):
+    def get_book_by_id(self, id) -> Book or None:
         for book in self.books:
             if book.id == id:
                 return book
@@ -24,7 +25,9 @@ class BooksDBAdapter:
                 break
 
     def save_new_book(self, book: Book):
+        book.id = self.last_id
         self.books.append(book)
+        self.last_id += 2
 
     def update_book(self, updated_book: Book):
         for book in self.books:
