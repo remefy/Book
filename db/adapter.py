@@ -9,7 +9,7 @@ class BooksDBAdapter:
     def prepare(self):
         pass
 
-    def get_all_books(self):
+    def get_all_books(self) -> list:
         return self.books
 
     def get_book_by_id(self, id) -> Book or None:
